@@ -1,0 +1,30 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/fonts' as *;
+
+.header,
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px;
+
+    &__image {
+        width: $nav-logoWidth;
+        height: $nav-logoHeight;
+    }
+
+    &__holder {
+        width: 100%;
+        margin: 0 15px;
+    }
+
+    &__list {
+        display: flex;
+        text-decoration: none;
+        list-style: none;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        font-size: $nav-fontSize;
+    }
+}
