@@ -1,0 +1,13 @@
+@use 'breakpoints' as *;
+
+@mixin table {
+    @media screen and (min-width: $table-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}

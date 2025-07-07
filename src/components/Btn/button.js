@@ -1,7 +1,9 @@
-const Button = () => {
+import "./button.scss";
+
+const Button = ({ txt }) => {
     return (
         <>
-            <h1>This is a button</h1>
+            <button className="btn">{txt}</button>
         </>
     )
 }
