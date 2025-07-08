@@ -1,7 +1,7 @@
 @use 'breakpoints' as *;
 
-@mixin table {
-    @media screen and (min-width: $table-breakpoint) {
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
         @content;
     }
 }

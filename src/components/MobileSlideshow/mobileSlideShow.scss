@@ -1,0 +1,31 @@
+.mobile-slideshow {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .mobile-slideshow {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+        background-color: #f0f0f0;
+    }
+
+    .slide {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        text-align: center;
+        background-color: #ccc;
+        line-height: 200px;
+        font-size: 24px;
+        // transition: opacity 0.5s ease;
+    }
+
+    .slide.active {
+        display: block;
+    }
+}
