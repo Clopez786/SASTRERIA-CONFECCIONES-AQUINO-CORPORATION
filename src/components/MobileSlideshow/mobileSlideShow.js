@@ -6,17 +6,17 @@ import "./mobileSlideShow.scss";
 
 const slides = [
     <div>
-        <img className="section1__image" src={Scissors} alt="" />
-        <h2>Custom Tailoring</h2>
+        <img className="mobile__image" src={Scissors} alt="" />
+        <h2 className="mobile__txt">Custom Tailoring</h2>
     </div>,
-    // <div>
-    //     <img className="section1__image" src={Thread} alt="" />
-    //     <h2>Alterations & Repairs</h2>
-    // </div>,
-    // <div>
-    //     <img className="section1__image" src={Shirt} alt="" />
-    //     <h2>Ready to Wear Collections</h2>
-    // </div>
+    <div>
+        <img className="mobile__image" src={Thread} alt="" />
+        <h2 className="mobile__txt">Alterations & Repairs</h2>
+    </div>,
+    <div>
+        <img className="mobile__image" src={Shirt} alt="" />
+        <h2 className="mobile__txt">Ready to Wear Collections</h2>
+    </div>
 ]
 
 const MobileSlideShow = () => {

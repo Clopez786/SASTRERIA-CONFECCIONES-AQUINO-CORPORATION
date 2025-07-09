@@ -4,6 +4,7 @@ import Gallary from "./gallary.js";
 import Services from "./services.js";
 import NotFound from "./notFound.js";
 import Logo from "../assets/images/favicon.png";
+import InstagramLogo from "../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.svg";
 import "../assets/styles/global.scss";
 import Button from "../components/Btn/button.js";
 import { Route, Routes } from "react-router-dom";
@@ -30,19 +31,9 @@ const PageWrapper = () => {
                 <Route path="/*" element={<NotFound />} />
             </Routes>
             <footer className="footer">
-                <img className="header__image" src={Logo} alt="person making a new clothing item" />
-                <p>Master craftmanship and timeless style.</p>
-                <div>
-                    <div>
-                        <p>facebook logo</p>
-                    </div>
-                    <div>
-                        <p>instagram logo</p>
-                    </div>
-                    <div>
-                        <p>twitter logo</p>
-                    </div>
-                </div>
+                <img className="footer__image" src={Logo} alt="person making a new clothing item" />
+                <p className="footer__txt">Master craftmanship and timeless style.</p>
+                <img className="footer__icon" src={InstagramLogo} alt="" />
             </footer>
         </>
     )

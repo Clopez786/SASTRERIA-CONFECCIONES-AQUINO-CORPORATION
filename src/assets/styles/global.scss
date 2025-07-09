@@ -28,6 +28,15 @@
         padding: 0;
         font-size: $nav-fontSize;
     }
+
+    &__icon {
+        width: $nav-logoWidth;
+        height: $nav-logoHeight;
+    }
+
+    &__txt {
+        font-size: 0.75em;
+    }
 }
 
 .hero {
@@ -56,4 +65,8 @@
         height: 100px;
         object-fit: contain;
     }
+}
+
+.hide {
+    display: none;
 }

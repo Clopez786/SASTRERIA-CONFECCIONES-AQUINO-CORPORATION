@@ -4,8 +4,19 @@ import Scissors from "../assets/images/scissors.png";
 import Thread from "../assets/images/thread_spool.png";
 import Shirt from "../assets/images/shirt.png";
 import MobileSlideShow from "../components/MobileSlideshow/mobileSlideShow.js";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleSize = () => setScreenWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleSize);
+
+        return () => window.removeEventListener('resize', handleSize);
+    }, []);
+
     return (
         <div>
             <div className="hero">
@@ -16,7 +27,7 @@ const Home = () => {
                 </div>
             </div>
             <MobileSlideShow />
-            <div className="section1">
+            <div className={`section1 ${screenWidth < 768 ? 'hide' : ''}`}>
                 <div>
                     <img className="section1__image" src={Scissors} alt="" />
                     <h2>Custom Tailoring</h2>
