@@ -5,6 +5,7 @@ import Thread from "../assets/images/thread_spool.png";
 import Shirt from "../assets/images/shirt.png";
 import MobileSlideShow from "../components/MobileSlideshow/mobileSlideShow.js";
 import { useEffect, useState } from "react";
+import TestimonialCarousel from "../components/TestimonialCarousel/TestimonialCarousel.js";
 
 const Home = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -40,6 +41,9 @@ const Home = () => {
                     <img className="section1__image" src={Shirt} alt="" />
                     <h2>Ready to Wear Collections</h2>
                 </div>
+            </div>
+            <div className="testimonies">
+                <TestimonialCarousel />
             </div>
         </div>
     )
