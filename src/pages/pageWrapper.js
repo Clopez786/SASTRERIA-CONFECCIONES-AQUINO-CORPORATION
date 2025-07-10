@@ -43,7 +43,7 @@ const PageWrapper = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/gallery" element={<Gallary />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/*" element={<NotFound />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <footer className="footer">
                 <a href="/"><img className="footer__image" src={Logo} alt="person making a new clothing item" /></a>
