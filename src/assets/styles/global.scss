@@ -9,6 +9,11 @@
     align-items: center;
     margin: 10px 16px;
 
+    a {
+        text-decoration: none;
+        color: $primary;
+    }
+
     &__image {
         width: $nav-logoWidth;
         height: $nav-logoHeight;
@@ -48,6 +53,7 @@
         left: 50%;
         color: $secondary;
         transform: translate(-50%, -50%);
+        text-align: center;
     }
 
     &__image {
@@ -321,17 +327,197 @@
 
 /* Tablet */
 @include tablet {
-    .about__main {
-        flex-direction: row;
-        align-items: flex-start;
+
+    //about page
+    .about {
+        &__main {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        &__text {
+            padding-left: 24px;
+            max-width: 600px;
+            font-size: 1rem;
+        }
+
+        &__text h2 {
+            font-size: 28px;
+        }
+
+        &__header h1 {
+            font-size: 36px;
+        }
+
+        &__header p {
+            font-size: 17px;
+        }
     }
 
     .founder__img {
-        max-width: 280px;
+        max-width: 300px;
     }
 
-    .about__text {
-        padding-left: 30px;
+    .timeline h3 {
+        font-size: 20px;
+    }
+
+    .timeline p {
+        font-size: 16px;
+    }
+
+    //home page
+
+    .hero {
+        &__image {
+            height: 320px; // more height for larger screens
+        }
+
+        &__txt {
+            font-size: 2rem;
+            top: 55%;
+        }
+
+        &__txt button {
+            height: 40px;
+            font-size: 0.5em;
+        }
+    }
+
+    .section1 {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px;
+
+        div {
+            width: 30%;
+            text-align: center;
+        }
+
+        &__image {
+            height: 120px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+    }
+
+    .testimonies {
+        padding: 40px 20px;
+        background-color: #fff;
+        max-width: 1100px;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    //pagewrapper
+    .mobile__menu {
+        display: none;
+    }
+
+    .header,
+    .footer {
+        margin: 10px 32px;
+    }
+
+    .header__list {
+        display: flex !important;
+    }
+
+    .header__holder {
+        margin: 0 12vw;
+        font-size: 1.5em;
+    }
+
+    .header button {
+        width: 50%;
+    }
+
+    .header__image,
+    .footer__image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer__txt {
+        font-size: 1.5em;
+    }
+
+    .footer__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    //Service page
+    .services {
+        padding: 60px 40px;
+
+        &__title {
+            font-size: 2.5em;
+        }
+
+        &__grid {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        &__card {
+            width: 48%;
+            padding: 24px;
+        }
+
+        &__img {
+            height: 220px;
+        }
+
+        &__subTitle {
+            font-size: 2em;
+        }
+
+        &__text {
+            font-size: 1.25em;
+        }
+    }
+
+    //Gallery Page
+    .gallery {
+        margin: 0 32px;
+
+        &__title {
+            font-size: 2.5em;
+        }
+    }
+
+    //notfound Page
+    .notfound {
+        padding: 80px 40px;
+
+        &__image {
+            max-width: 350px;
+            margin-bottom: 40px;
+        }
+
+        &__title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        &__text {
+            font-size: 1.5em;
+            max-width: 600px;
+        }
+
+        &__button {
+            font-size: 16px;
+            padding: 14px 28px;
+        }
     }
 }
 

@@ -28,7 +28,7 @@ const Services = () => {
                     <div key={index} className="service__card">
                         <img className="services__img" src={service.image} alt={service.title} />
                         <h2 className='services__subTitle'>{service.title}</h2>
-                        <p className='servies__text'>{service.description}</p>
+                        <p className='services__text'>{service.description}</p>
                     </div>
                 ))}
             </div>
