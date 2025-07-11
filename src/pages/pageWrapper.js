@@ -7,7 +7,7 @@ import Logo from "../assets/images/favicon.png";
 import InstagramLogo from "../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.svg";
 import "../assets/styles/global.scss";
 import Button from "../components/Btn/button.js";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MobileMenu from "../components/MobileMenu/MobileMenu.js";
 
@@ -31,9 +31,9 @@ const PageWrapper = () => {
                         <MobileMenu />
                     </div>
                     <ul className={`header__list ${screenWidth < 768 ? 'hide' : ''}`}>
-                        <li>About</li>
-                        <li>Services</li>
-                        <li>Gallery</li>
+                        <Link to="/about">About</Link>
+                        <Link to="/services">Services</Link>
+                        <Link to="/gallery">Gallery</Link>
                     </ul>
                 </nav>
                 <Button txt={"contact us"} />
