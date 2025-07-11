@@ -3,30 +3,47 @@ import Button from "../components/Btn/button.js";
 import Scissors from "../assets/images/scissors.png";
 import Thread from "../assets/images/thread_spool.png";
 import Shirt from "../assets/images/shirt.png";
+import MobileSlideShow from "../components/MobileSlideshow/mobileSlideShow.js";
+import { useEffect, useState } from "react";
+import TestimonialCarousel from "../components/TestimonialCarousel/TestimonialCarousel.js";
 
 const Home = () => {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleSize = () => setScreenWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleSize);
+
+        return () => window.removeEventListener('resize', handleSize);
+    }, []);
+
     return (
         <div>
             <div className="hero">
                 <img className="hero__image" src={heroImage} alt="" />
-                <div>
+                <div className="hero__txt">
                     <p>Crafted Elegance. <br /> Tailord to You.</p>
                     <Button txt={"contact us"} />
                 </div>
             </div>
-            <div>
+            <MobileSlideShow />
+            <div className={`section1 ${screenWidth < 768 ? 'hide' : ''}`}>
                 <div>
-                    <img src={Scissors} alt="" />
+                    <img className="section1__image" src={Scissors} alt="" />
                     <h2>Custom Tailoring</h2>
                 </div>
                 <div>
-                    <img src={Thread} alt="" />
+                    <img className="section1__image" src={Thread} alt="" />
                     <h2>Alterations & Repairs</h2>
                 </div>
                 <div>
-                    <img src={Shirt} alt="" />
+                    <img className="section1__image" src={Shirt} alt="" />
                     <h2>Ready to Wear Collections</h2>
                 </div>
+            </div>
+            <div className="testimonies">
+                <TestimonialCarousel />
             </div>
         </div>
     )
