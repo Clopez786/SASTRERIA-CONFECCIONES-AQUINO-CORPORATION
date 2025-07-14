@@ -3,7 +3,7 @@ import Button from "../components/Button/Button.js";
 import Scissors from "../assets/images/scissors.png";
 import Thread from "../assets/images/thread_spool.png";
 import Shirt from "../assets/images/shirt.png";
-import MobileSlideshow from "../components/MobileSlideshow/MobileSlideshow.js";
+import MobileSlideshow from "../components/MobileSlideshow/MobileSlideShow.js";
 import { useEffect, useState } from "react";
 import TestimonialCarousel from "../components/TestimonialCarousel/TestimonialCarousel.js";
 
