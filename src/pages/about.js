@@ -15,7 +15,7 @@ const About = () => {
                 <img
                     src={Profile}
                     alt="Fidel Aquino, Founder"
-                    className="founder__img"
+                    className="about__image"
                 />
                 <div className="about__text">
                     <h2>My Story</h2>

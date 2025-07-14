@@ -1,0 +1,19 @@
+ @use "../../assets/styles/partials/variables" as *;
+ @use '../../assets/styles/partials/mixins' as *;
+
+ .btn {
+     background-color: $primary;
+     color: $color-white;
+     font-family: $font-sans-ui;
+     font-size: $font-size-base;
+     padding: $spacing-sm;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background 0.3s ease;
+
+     &:hover {
+         background-color: $accent;
+         color: $primary;
+     }
+ }

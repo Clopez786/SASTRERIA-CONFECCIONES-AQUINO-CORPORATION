@@ -1,2 +1,17 @@
- $headingLogo: "Playfair Display";
- $bodyText: "Lora";
+@use 'variables' as *;
+
+body {
+    font-family: $font-serif-body;
+    font-size: $font-size-base;
+    color: $primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-serif-title;
+    color: $primary;
+}
