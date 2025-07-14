@@ -1,47 +1,50 @@
 @use '../../assets/styles/partials/variables' as *;
 
-.mobile {
-    &__menu {
-        position: relative;
-        z-index: 1000;
-        padding: 0;
+.mobile-menu {
+    position: relative;
+    z-index: 1000;
 
+    &__toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: $spacing-sm;
+
+        .bar {
+            width: 25px;
+            height: 2px;
+            background-color: $primary;
+            transition: 0.3s;
+        }
     }
-}
 
-.hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
+    &__dropdown {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        background-color: $secondary;
+        border-radius: 6px;
+        padding: $spacing-sm $spacing-xs;
+        box-shadow: $shadow-card;
+        display: flex;
+        flex-direction: column;
+        border: solid $accent 4px;
 
-.hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: $secondary;
-    transition: 0.3s ease;
-}
+        a {
+            font-family: $font-sans-ui;
+            font-size: $font-size-base;
+            color: $primary;
+            padding: $spacing-xs 0;
+            text-decoration: none;
 
-.dropdown {
-    position: absolute;
-    top: 45px;
-    right: 10px;
-    background-color: #F9F6F2;
-    border-radius: 5px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    padding: 10px 15px;
-}
+            &:hover {
+                color: $accent;
+            }
 
-.dropdown a {
-    text-decoration: none;
-    color: $primary;
-}
 
-.dropdown a:hover {
-    color: $accent;
+        }
+    }
 }

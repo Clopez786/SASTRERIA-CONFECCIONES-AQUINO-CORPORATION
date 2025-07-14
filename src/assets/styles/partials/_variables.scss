@@ -4,8 +4,33 @@ $secondary: #F9F6F2; //Background tone for sections (like service blocks)
 $accent: #C9A96C; //Use sparingly: CTA hover states, underlines
 $Neutral-Gray: #7D7D7D; //For paragraph text, icons, form labels
 $DarkBrownWood: #4B3621; //Optional background/accent
+$color-white: white;
 
 //Mobile
 $nav-logoWidth: 25px;
 $nav-logoHeight: 25px;
 $nav-fontSize: 0.75em;
+
+// Typography
+$font-serif-title: 'Playfair Display', serif;
+$font-serif-body: 'Lora', serif;
+$font-sans-ui: 'Inter', sans-serif;
+
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-md: 18px;
+$font-size-lg: 24px;
+$font-size-xl: 32px;
+$font-size-xxl: 40px;
+
+// Spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 32px;
+$spacing-lg: 48px;
+
+// Layout
+$max-width-container: 1200px;
+
+// Shadows
+$shadow-card: 0 6px 18px rgba(0, 0, 0, 0.05);
