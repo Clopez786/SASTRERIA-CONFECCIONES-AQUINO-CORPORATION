@@ -79,6 +79,7 @@ export default function About({ lang = 'en', setLang }) {
                 </div>
 
                 <p>{t.tagline}</p>
+
             </div>
 
             <div className="about__main">

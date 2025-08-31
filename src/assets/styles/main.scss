@@ -79,6 +79,20 @@
     font-family: $font-serif-body;
     color: $primary;
 
+    &__mobile {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__tabletDesktop {
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
     &__header {
         text-align: center;
         margin-bottom: $spacing-sm;
