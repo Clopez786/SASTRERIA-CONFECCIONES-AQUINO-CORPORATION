@@ -1,0 +1,137 @@
+/* ===============================
+   Language Toggle (nice + simple)
+   Works with:
+   <div class="lang-toggle">
+     <span class="lang-toggle__label">Language:</span>
+     <button class="lang-toggle__btn is-active">EN</button>
+     <button class="lang-toggle__btn">ES</button>
+   </div>
+   =============================== */
+
+/* Optional design tokens (safe fallbacks provided) */
+:root {
+    --lt-border: #d1d5db;
+    /* gray-300 */
+    --lt-border-hover: #9ca3af;
+    /* gray-400 */
+    --lt-bg: #ffffff;
+    /* white */
+    --lt-pill-bg: #f3f4f6;
+    /* gray-100 */
+    --lt-text: #111827;
+    /* gray-900 */
+    --lt-active-bg: #111827;
+    /* gray-900 */
+    --lt-active-fg: #ffffff;
+    /* white */
+    --lt-focus: 59, 130, 246;
+    /* rgb for focus ring (blue-500) */
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font: inherit;
+    color: var(--lt-text);
+    user-select: none;
+    /* light pill behind the buttons (nice touch, optional) */
+    padding: 0.25rem;
+    border-radius: 999px;
+    background: var(--lt-pill-bg);
+}
+
+.lang-toggle__label {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+/* Buttons look like a segmented control */
+.lang-toggle__btn {
+    appearance: none;
+    border: 1px solid var(--lt-border);
+    background: var(--lt-bg);
+    color: var(--lt-text);
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+
+    /* subtle animation */
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.05s ease;
+}
+
+/* space between the two buttons */
+.lang-toggle__btn+.lang-toggle__btn {
+    margin-left: 0.35rem;
+}
+
+/* hover/focus/active states */
+.lang-toggle__btn:hover {
+    border-color: var(--lt-border-hover);
+}
+
+.lang-toggle__btn:active {
+    transform: translateY(1px);
+}
+
+.lang-toggle__btn:focus {
+    outline: none;
+}
+
+.lang-toggle__btn:focus-visible {
+    /* accessible focus ring */
+    box-shadow:
+        0 0 0 3px rgba(var(--lt-focus), 0.25);
+}
+
+/* selected state */
+.lang-toggle__btn.is-active {
+    background: var(--lt-active-bg);
+    color: var(--lt-active-fg);
+    border-color: var(--lt-active-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Compact variant (use: <div class="lang-toggle lang-toggle--sm">...) */
+.lang-toggle--sm .lang-toggle__btn {
+    padding: 0.3rem 0.55rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Dark mode polish */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --lt-border: #374151;
+        /* gray-700 */
+        --lt-border-hover: #9ca3af;
+        /* gray-400 */
+        --lt-bg: #111827;
+        /* gray-900 */
+        --lt-pill-bg: #1f2937;
+        /* gray-800 */
+        --lt-text: #f9fafb;
+        /* gray-50 */
+        --lt-active-bg: #f9fafb;
+        /* gray-50 */
+        --lt-active-fg: #111827;
+        /* gray-900 */
+    }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    .lang-toggle__btn {
+        transition: none;
+    }
+}

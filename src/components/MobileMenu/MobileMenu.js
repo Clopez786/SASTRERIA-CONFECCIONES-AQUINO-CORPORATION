@@ -20,6 +20,7 @@ const MobileMenu = () => {
                     <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
                     <Link to="/services" onClick={() => setIsOpen(false)}>Services</Link>
                     <Link to="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>
                 </nav>
             )}
         </div>

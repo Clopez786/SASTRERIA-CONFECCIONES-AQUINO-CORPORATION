@@ -3,15 +3,19 @@ import About from "./About.js";
 import Gallery from "./Gallery.js";
 import Services from "./Services.js";
 import NotFound from "./NotFound.js";
+import Contact from "./Contact.js";
 import Logo from "../assets/images/favicon.png";
 import InstagramLogo from "../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.svg";
 import "../assets/styles/main.scss";
-import Button from "../components/Button/Button.js";
 import { Link, Route, Routes } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import MobileMenu from "../components/MobileMenu/MobileMenu.js";
+import LanguageToggle from "../components/LanguageToggle/LanguageToggle.js";
 
 const PageWrapper = () => {
+    // NEW: language state (default English). Keep it simple at first.
+    const [lang, setLang] = useState("en");
+
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [showHeader, setShowHeader] = useState(true);
     const lastScrollY = useRef(window.scrollY);
@@ -20,26 +24,14 @@ const PageWrapper = () => {
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768);
         window.addEventListener('resize', handleResize);
+
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
-            // hide on scroll down
-            if (currentScrollY > lastScrollY.current) {
-                setShowHeader(false);
-            }
-
-            // show on scroll up
-            if (currentScrollY < lastScrollY.current) {
-                setShowHeader(true);
-            }
-
+            if (currentScrollY > lastScrollY.current) setShowHeader(false);
+            if (currentScrollY < lastScrollY.current) setShowHeader(true);
             lastScrollY.current = currentScrollY;
-
-            // show after user stops scrolling for 200ms
             if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-            scrollTimeout.current = setTimeout(() => {
-                setShowHeader(true);
-            }, 200);
+            scrollTimeout.current = setTimeout(() => setShowHeader(true), 200);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -49,46 +41,56 @@ const PageWrapper = () => {
         };
     }, []);
 
+    // quick helpers for header labels
+    const nav = {
+        about: lang === "es" ? "Sobre Nosotros" : "About",
+        services: lang === "es" ? "Servicios" : "Services",
+        gallery: lang === "es" ? "Galería" : "Gallery",
+        contact: lang === 'es' ? "Contáctanos" : "Contact us",
+    };
+
     return (
-        <div className="wrapper">
+        <div className="wrapper site-bg bg--stitch--bold" lang={lang}>
             <header className={`header ${showHeader ? 'visible' : 'hidden'}`}>
                 <Link to="/" className="header__logo">
-                    <img src={Logo} alt="Aquino Tailor logo" />
+                    <img src={Logo} alt={lang === "es" ? "Logo de Aquino Tailor" : "Aquino Tailor logo"} />
                 </Link>
-
 
                 {isMobile ? (
                     <div className="header__right">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        {/* NEW: toggle on mobile */}
+                        <LanguageToggle lang={lang} setLang={setLang} />
+                        {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                             <img className="header__social" src={InstagramLogo} alt="Instagram" />
-                        </a>
+                        </a> */}
                         <MobileMenu />
                     </div>
-
                 ) : (
                     <nav className="header__nav">
-                        <Link to="/about">About</Link>
-                        <Link to="/services">Services</Link>
-                        <Link to="/gallery">Gallery</Link>
-                        <Link to="/">
-                            <Button txt="Book Now" />
-                        </Link>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <Link to="/about">{nav.about}</Link>
+                        <Link to="/services">{nav.services}</Link>
+                        <Link to="/gallery">{nav.gallery}</Link>
+                        <Link to="/contact">{nav.contact}</Link>
+                        {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                             <img src={InstagramLogo} alt="Instagram" />
-                        </a>
+                        </a> */}
+                        {/* NEW: toggle on desktop */}
+                        <LanguageToggle lang={lang} setLang={setLang} showLabel={false} />
                     </nav>
                 )}
-
-
             </header>
+
             <div className="header__spacer" />
+
             <main className="main">
+                {/* pass lang down */}
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/gallery" element={<Gallery />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="/" element={<Home lang={lang} />} />
+                    <Route path="/about" element={<About lang={lang} setLang={setLang} />} />
+                    <Route path="/services" element={<Services lang={lang} />} />
+                    <Route path="/gallery" element={<Gallery lang={lang} />} />
+                    <Route path="/contact" element={<Contact lang={lang} setLang={setLang} />} />
+                    <Route path="*" element={<NotFound lang={lang} />} />
                 </Routes>
             </main>
 
@@ -97,6 +99,6 @@ const PageWrapper = () => {
             </footer>
         </div>
     );
-}
+};
 
 export default PageWrapper;

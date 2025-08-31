@@ -1,0 +1,114 @@
+/* ==== Tailor-themed backgrounds (CSS-only, fast) ==== */
+:root {
+    /* tweak these to match your brand */
+    --bg: #F6F2EC;
+    /* page base */
+    --ink: 44, 44, 44;
+    /* rgb(gray-900) used via rgba() */
+    --accent: 201, 169, 108;
+    /* rgb(blue-600) if you want hints */
+}
+
+/* Base wrapper background */
+.site-bg {
+    min-height: 100%;
+    background-color: var(--bg);
+    background-attachment: fixed;
+    /* subtle parallax, remove if not desired */
+}
+
+/* Base stitch pattern (stronger than before) */
+.bg--stitch {
+    background-color: var(--bg);
+    background-image:
+        /* button dots */
+        radial-gradient(circle at 18px 18px, rgba(var(--ink), .14) 2.2px, transparent 2.3px),
+        radial-gradient(circle at 42px 42px, rgba(var(--ink), .12) 1.8px, transparent 2.2px),
+        /* stitch lines */
+        repeating-linear-gradient(135deg, rgba(var(--ink), .18) 0 1px, transparent 1px 12px),
+        repeating-linear-gradient(45deg, rgba(var(--ink), .12) 0 1px, transparent 1px 10px);
+    background-size:
+        60px 60px,
+        60px 60px,
+        28px 28px,
+        24px 24px;
+}
+
+/* BOLDER option: more visible lines + bigger tiles */
+.bg--stitch--bold {
+    background-image:
+        radial-gradient(circle at 22px 22px, rgba(var(--ink), .20) 2.4px, transparent 2.6px),
+        radial-gradient(circle at 46px 46px, rgba(var(--ink), .16) 2px, transparent 2.4px),
+        repeating-linear-gradient(135deg, rgba(var(--ink), .26) 0 1.2px, transparent 1.2px 14px),
+        repeating-linear-gradient(45deg, rgba(var(--ink), .18) 0 1.2px, transparent 1.2px 12px);
+    background-size:
+        72px 72px,
+        72px 72px,
+        34px 34px,
+        30px 30px;
+}
+
+/* ACCENT thread: add a touch of gold to one stitch layer */
+.bg--stitch--accent {
+    background-image:
+        radial-gradient(circle at 22px 22px, rgba(var(--ink), .18) 2.4px, transparent 2.6px),
+        radial-gradient(circle at 46px 46px, rgba(var(--ink), .14) 2px, transparent 2.4px),
+        repeating-linear-gradient(135deg, rgba(var(--accent), .28) 0 1.2px, transparent 1.2px 14px),
+        /* gold thread */
+        repeating-linear-gradient(45deg, rgba(var(--ink), .16) 0 1.2px, transparent 1.2px 12px);
+    background-size:
+        72px 72px,
+        72px 72px,
+        34px 34px,
+        30px 30px;
+}
+
+/* 2) PATTERN PAPER — faint grid + dashed seam guides (pattern-making vibe) */
+.bg--pattern {
+    background-image:
+        /* dashed diagonal seam guide */
+        repeating-linear-gradient(135deg, rgba(var(--ink), .05) 0 1px, transparent 1px 16px),
+        /* grid horizontal */
+        linear-gradient(transparent calc(100% - 1px), rgba(var(--ink), .06) 0),
+        /* grid vertical */
+        linear-gradient(90deg, transparent calc(100% - 1px), rgba(var(--ink), .06) 0);
+    background-size:
+        24px 24px,
+        /* dash spacing */
+        28px 28px,
+        /* row height */
+        28px 28px;
+    /* column width */
+}
+
+/* 3) PINSTRIPE (GUAYABERA-INSPIRED) — elegant vertical pinstripes */
+.bg--pinstripe {
+    background-image:
+        repeating-linear-gradient(0deg,
+            rgba(var(--ink), .06) 0 1px,
+            transparent 1px 10px);
+}
+
+/* Optional: soften content panels on busy backgrounds */
+.surface {
+    background: rgba(255, 255, 255, .78);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-radius: 12px;
+}
+
+/* Dark mode polish (optional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1a1a1a;
+        /* near $primary, a bit deeper for true dark */
+        --ink: 249, 246, 242;
+        /* use light ink on dark (≈$secondary as RGB) */
+    }
+
+    .surface {
+        background: rgba(15, 23, 42, .6);
+        border-color: rgba(255, 255, 255, .06);
+    }
+}
