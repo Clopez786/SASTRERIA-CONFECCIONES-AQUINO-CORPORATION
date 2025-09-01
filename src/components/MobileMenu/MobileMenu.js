@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import InstagramLogo from '../../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.png'
-import "./MobileMenu.scss";
+// import InstagramLogo from '../../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.png'
+import "./mobileMenu.scss";
 
 const MobileMenu = () => {
 

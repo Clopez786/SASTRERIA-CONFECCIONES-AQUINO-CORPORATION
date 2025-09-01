@@ -4,7 +4,7 @@ import Button from "../components/Button/Button.js";
 import Scissors from "../assets/images/scissors.png";
 import Thread from "../assets/images/thread_spool.png";
 import Shirt from "../assets/images/shirt.png";
-import MobileSlideshow from "../components/MobileSlideshow/MobileSlideShow.js";
+import MobileSlideshow from "../components/MobileSlideshow/mobileSlideShow.js";
 import TestimonialCarousel from "../components/TestimonialCarousel/TestimonialCarousel.js";
 import { Link } from "react-router-dom";
 
@@ -42,7 +42,7 @@ export default function Home({ lang }) {
 
             <MobileSlideshow lang={lang} />
 
-            {screenWidth >= 768 && (
+            {screenWidth >= 767 && (
                 <section className="features">
                     <div className="features__item">
                         <img src={Scissors} alt={text.f1} />

@@ -1,12 +1,12 @@
-import Home from "./Home.js";
-import About from "./About.js";
+import "../assets/styles/main.scss";
+import Home from "./home.js";
+import About from "./about.js";
 import Gallery from "./Gallery.js";
-import Services from "./Services.js";
-import NotFound from "./NotFound.js";
+import Services from "./services.js";
+import NotFound from "./notFound.js";
 import Contact from "./Contact.js";
 import Logo from "../assets/images/favicon.png";
 // import InstagramLogo from "../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.svg";
-import "../assets/styles/main.scss";
 import { Link, Route, Routes } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import MobileMenu from "../components/MobileMenu/MobileMenu.js";

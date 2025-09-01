@@ -1,4 +1,4 @@
-import PageWrapper from "./pages/PageWrapper";
+import PageWrapper from "./pages/pageWrapper.js";
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Scissors from "../../assets/images/scissors.png";
 import Thread from "../../assets/images/thread_spool.png";
 import Shirt from "../../assets/images/shirt.png";
-import "./MobileSlideShow.scss";
+import "./mobileSlideShow.scss";
 
 const MobileSlideShow = (lang = 'en') => {
     const [currentIndex, setCurrentIndex] = useState(0);
