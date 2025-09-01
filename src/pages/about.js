@@ -1,5 +1,4 @@
 import Profile from '../assets/images/AquinoProfilePhoto.png';
-import LanguageToggle from '../components/LanguageToggle/LanguageToggle';
 
 // All page text in one place (easy to edit/expand)
 const translations = {

@@ -1,5 +1,3 @@
-import LanguageToggle from '../components/LanguageToggle/LanguageToggle';
-
 const PHONE1_DISPLAY = "(305) 635-8575";
 const PHONE1_E164 = "+13056358575";
 

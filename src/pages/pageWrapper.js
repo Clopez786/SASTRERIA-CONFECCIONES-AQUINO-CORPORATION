@@ -5,7 +5,7 @@ import Services from "./Services.js";
 import NotFound from "./NotFound.js";
 import Contact from "./Contact.js";
 import Logo from "../assets/images/favicon.png";
-import InstagramLogo from "../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.svg";
+// import InstagramLogo from "../assets/images/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.svg";
 import "../assets/styles/main.scss";
 import { Link, Route, Routes } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
